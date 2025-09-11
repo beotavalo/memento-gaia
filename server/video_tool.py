@@ -242,9 +242,10 @@ async def ask_question_about_video(
     ]
 
     chat = await openai_client.chat.completions.create(
-        model="gemini-2.5-pro-preview-05-06",
+        model=os.getenv("OPENAI_VISION_MODEL", "gpt-4o"),
         messages=[{"role": "user", "content": user_message}],
-        max_tokens=512,
+        # Use max_completion_tokens for modern models like gpt-4o/gpt-5
+        max_completion_tokens=512,
     )
     return chat.choices[0].message.content.strip()
 

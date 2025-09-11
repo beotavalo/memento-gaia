@@ -1,5 +1,11 @@
 from serpapi import GoogleSearch
+from serpapi import SerpApiClient
 from mcp.server.fastmcp import FastMCP
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()  # picks up OPENAI_* variables from .env if present
 
 # --------------------------------------------------------------------------- #
 #  FastMCP server instance
@@ -29,7 +35,7 @@ async def google_search(query: str) -> list[dict]:
     params = {
         "engine": "google",
         "q": query,
-        "api_key": "" # please set your api key
+        "api_key": os.getenv("SERPAPI_API_KEY") # please set your api key
     }
 
     search = GoogleSearch(params)

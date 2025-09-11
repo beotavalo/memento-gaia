@@ -61,9 +61,13 @@ class OpenAIBackend:
         payload: Dict[str, Any] = {
             "model": self.model,
             "messages": messages,
-            "max_tokens": max_tokens,
             "temperature": temperature,
         }
+        model_lc = (self.model or "").lower()
+        if model_lc.startswith(("gpt-5", "gpt-4.1", "gpt-4o", "o1", "o3", "o4")):
+            payload["max_completion_tokens"] = max_tokens
+        else:
+            payload["max_tokens"] = max_tokens
         resp = await self.client.chat.completions.create(**payload)
         msg = resp.choices[0].message
         return {"content": msg.content or ""}

@@ -167,3 +167,7 @@ hf_cache/
 cache/
 halo2/
 db/
+
+#Prevent push big data size Dataset 
+dataset/
+*.log
