@@ -90,7 +90,7 @@ docker compose up -d
 ```
 ## Automated Python and System Set Up
 This is the step by step guide for python environment and system set up 
-[Step by step set up](./memento-gaia/gaia-agent-plan/plan-step-by-step.md)
+[Step by step set up](https://github.com/beotavalo/memento-gaia/blob/main/gaia-agent-plan/plan-step-by-step.md)
 
 ### Code agent promt
 
