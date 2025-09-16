@@ -35,6 +35,7 @@ uv pip install -U huggingface_hub
 5. Run the HF login command: 
 
 ```bash
+git config --global credential.helper store
 hf auth login
 ```
 

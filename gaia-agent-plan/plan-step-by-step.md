@@ -28,7 +28,7 @@ source .venv/bin/activate
 5. Install python dependencies with uv
 
 ```bash
-uv pip install -r requeriments.txt
+uv pip install -r requirements.txt
 ```
 
 ### System Dependencies Installation

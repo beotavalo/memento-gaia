@@ -82,7 +82,7 @@ class OpenAIBackend(ChatBackend):
         messages: List[Dict[str, Any]],
         tools: List[Dict[str, Any]] | None = None,
         tool_choice: str | None = "auto",
-        max_tokens: int = 4096,
+        max_tokens: int = 8192,
     ) -> Dict[str, Any]:
         payload: Dict[str, Any] = {
             "model": self.model,
